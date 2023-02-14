@@ -40,9 +40,12 @@ def save_file(file_name):
     try:
         r = s3_client.Bucket(bucket_name).download_file('upload_img/{}'.format(file_name),
                                                         'data/test/image/{}'.format(object_name))
+        print("file downloaded")
         msg = True
     except:
         msg = "file is not downloaded"
+        print(msg)
+
     return msg
 
 
@@ -86,7 +89,7 @@ def api():
     filename_person = request.json['file']
     filename_person.lower()
     preds = request.json['preds']
-    print("filename: ", filename_person.lower)
+    print("filename: ", filename_person)
     print("preds value:", preds)
 
     save_file(filename_person)
@@ -115,5 +118,5 @@ def api():
 
 
 if __name__ == "__main__":
-    application.run()
+    application.run(host='0.0.0.0', port=5001)
 

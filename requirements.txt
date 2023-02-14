@@ -8,3 +8,4 @@ torch==1.13.1
 torchvision==0.14.1
 Werkzeug==2.2.2
 opencv-python==4.7.0.68
+boto3
