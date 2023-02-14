@@ -15,7 +15,7 @@ from tryon_utils.image_mask import make_body_mask
 application = Flask(__name__)
 application.config['ALLOWED_EXTENSIONS'] = {'png', 'jpg', 'jpeg', 'PNG', 'JPG', 'JPEG'}
 
-bucket_name = 'wiw-img'
+bucket_name = 'ayush-test'
 filename_cloth = '004325_1.jpg'
 
 
